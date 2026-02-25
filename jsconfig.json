@@ -1,25 +1,18 @@
 {
-  "extends": "./.svelte-kit/tsconfig.json",
-  "compilerOptions": {
-    "moduleResolution": "bundler",
-    "allowJs": true,
-    "checkJs": true,
-    "paths": {
-      "$lib": ["src/lib"],
-      "$lib/*": ["src/lib/*"],
-      "$components": ["src/lib/components"],
-      "$components/*": ["src/lib/components/*"],
-      "$ui": ["src/lib/components/ui"],  
-      "$ui/*": ["src/lib/components/ui/*"],
-      "$state": ["src/lib/state"],
-      "$state/*": ["src/lib/state/*"],
-      "$utils": ["src/lib/utils"],
-      "$utils/*": ["src/lib/utils/*"]
-    }
-  },
-  "include": [
-    "src/**/*.d.ts",
-    "src/**/*.js",
-    "src/**/*.svelte"
-  ]
+	"extends": "./.svelte-kit/tsconfig.json",
+	"compilerOptions": {
+		"moduleResolution": "bundler",
+		"allowJs": true,
+		"checkJs": true,
+		"strict": true,
+		"sourceMap": true,
+		"resolveJsonModule": true,
+		"esModuleInterop": true,
+		"skipLibCheck": true
+	},
+	"include": [
+		"src/**/*.d.ts",
+		"src/**/*.js",
+		"src/**/*.svelte"
+	]
 }
