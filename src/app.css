@@ -1,0 +1,77 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Default Dark Theme (Zinc Palette - Premium Look) */
+    --background: 240 10% 3.9%;  /* #09090b */
+    --foreground: 0 0% 98%;      /* #fafafa */
+
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+ 
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+ 
+    --primary: 263.4 70% 50.4%;  /* Violet-600 (Modern Developer Purple) */
+    --primary-foreground: 210 40% 98%;
+ 
+    --secondary: 240 3.7% 15.9%; /* Zinc-800 */
+    --secondary-foreground: 0 0% 98%;
+ 
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+ 
+    --accent: 240 3.7% 15.9%;
+    --accent-foreground: 0 0% 98%;
+ 
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+ 
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 240 4.9% 83.9%;
+ 
+    --radius: 0.75rem; /* 12px Rounded Corners (Apple Style) */
+  }
+ 
+  .dark {
+    /* Agar future mein Light mode chahiye ho toh yahan override kar lena */
+    /* Abhi hum dark by default hi rakhenge */
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1; /* Better font rendering */
+  }
+}
+
+/* Custom Scrollbar (Thin & Dark) */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-zinc-800 rounded-full hover:bg-zinc-700 transition-colors;
+}
+
+/* Transparency Checkerboard Pattern (Photoshop Style) */
+.bg-checkerboard {
+  background-color: #18181b; /* Zinc-900 base */
+  background-image:
+    linear-gradient(45deg, #27272a 25%, transparent 25%),
+    linear-gradient(-45deg, #27272a 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, #27272a 75%),
+    linear-gradient(-45deg, transparent 75%, #27272a 75%);
+  background-size: 20px 20px;
+  background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
+}
